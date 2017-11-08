@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ProjetoTCC"
+             x:Class="ProjetoTCC.Views.MainPage">
+
+    <StackLayout>
+        <Label Text="KappaESport Logo"/>
+        <Entry Placeholder="Usuario" />
+        <Entry IsPassword="True" Placeholder="Senha"/>
+        <Button Text="Entrar" Command="{Binding LoginCommand}" BackgroundColor="Transparent" BorderColor="Transparent" HorizontalOptions="Center"/>
+        <Button Text="Registrar" Command="{Binding RegisterCommand}" BackgroundColor="Transparent" BorderColor="Transparent" HorizontalOptions="Center"/>
+        <!--Espaço para botões sociais-->
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Google" />
+            <Button Text="Facebook" />
+            <Button Text="Twitter" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjetoTCC.Views.FollowPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="O que você curte?" />
+            <ListView x:Name="Games" 
+                      HasUnevenRows="True"
+                      HorizontalOptions="Start">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="Start" >
+                                <Image Source="{Binding ImageUrl}"  />
+                                <StackLayout HorizontalOptions="StartAndExpand">
+                                    <Label Text="{Binding Name}" />
+                                    <Label Text="Descrição" />
+                                </StackLayout>
+                                <Switch IsToggled="{Binding Follow}" HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

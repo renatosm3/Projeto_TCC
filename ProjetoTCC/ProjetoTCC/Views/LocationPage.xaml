@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjetoTCC.Views.LocationPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Sua Localização" />
+            <Picker Title="Pais">
+                <Picker.Items>
+                    <x:String>Brasil</x:String>
+                </Picker.Items>
+            </Picker>
+            <Picker Title="Estado">
+                <Picker.Items>
+                    <x:String>São Paulo</x:String>
+                    <x:String>Rio de Janeiro</x:String>
+                    <x:String>Belo Horizonte</x:String>
+                </Picker.Items>
+            </Picker>
+            <Picker Title="Cidade">
+                <Picker.Items>
+                    <x:String>Ribeirão Preto</x:String>
+                    <x:String>Franca</x:String>
+                    <x:String>Sertãozinho</x:String>
+                </Picker.Items>
+            </Picker>
+            <ListView>Estado</ListView>
+            <ListView>Cidade</ListView>
+            <Button Text="Confirmar" Command="{Binding FollowCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
