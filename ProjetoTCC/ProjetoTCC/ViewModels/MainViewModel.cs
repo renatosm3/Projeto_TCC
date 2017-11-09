@@ -2,7 +2,7 @@
 
 namespace ProjetoTCC.ViewModels
 {
-    class MainViewModel : BaseViewModel
+    class LoginViewModel : BaseViewModel
     {
         private string user;
 
@@ -25,7 +25,7 @@ namespace ProjetoTCC.ViewModels
 
         public Command LoginCommand { get; }
 
-        public MainViewModel() {
+        public LoginViewModel() {
             RegisterCommand = new Command(ExecuteRegisterCommand);
             LoginCommand = new Command(ExecuteLoginCommand);
         }

@@ -13,9 +13,9 @@ namespace ProjetoTCC.Views
 			InitializeComponent ();
             Games.ItemsSource = new List<GamesModel>
             {
-                new GamesModel{ Name = "Game A", ImageUrl = "images/default.jpg", Follow = false },
-                new GamesModel{ Name = "Game B", ImageUrl = "images/default.jpg", Follow = true },
-                new GamesModel{ Name = "Game C", ImageUrl = "images/default.jpg", Follow = false }
+                new GamesModel{ Name = "League of Legends", ImageUrl = "lollogo.png", Follow = false },
+                new GamesModel{ Name = "DOTA 2", ImageUrl = "dota.png", Follow = false },
+                new GamesModel{ Name = "Hearthstone", ImageUrl = "hearthstone.png", Follow = false }
             };
 		}
 	}

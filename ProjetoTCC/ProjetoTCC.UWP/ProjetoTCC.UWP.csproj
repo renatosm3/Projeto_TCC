@@ -18,7 +18,11 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>ProjetoTCC.UWP_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>A5F9AC2196E99FBC18FCA6D4D5218A9B3B88AD2E</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>0FC9E5A6A260BB6054F1266F103E0DB08EFB8071</PackageCertificateThumbprint>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxPackageDir>C:\Users\Vini\Desktop\</AppxPackageDir>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -109,7 +113,15 @@
     <None Include="ProjetoTCC.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="battlenet.png" />
+    <Content Include="discord.png" />
+    <Content Include="dota.png" />
+    <Content Include="facebook.png" />
+    <Content Include="google.png" />
+    <Content Include="hearthstone.png" />
     <Content Include="images\default.jpg" />
+    <Content Include="lollogo.png" />
+    <Content Include="PC.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-100.png" />
     <Content Include="Assets\LockScreenLogo.scale-125.png" />
@@ -142,6 +154,11 @@
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="psn.png" />
+    <Content Include="share.png" />
+    <Content Include="steam.png" />
+    <Content Include="twitch.png" />
+    <Content Include="twitchlogo.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
