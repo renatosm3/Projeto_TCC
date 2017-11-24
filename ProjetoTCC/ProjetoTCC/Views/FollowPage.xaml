@@ -3,16 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProjetoTCC.Views.FollowPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="O que você curte?" />
+        <StackLayout BackgroundColor="White" Margin="20,0,20,0">
+            <Label Text="O que você curte?" HorizontalOptions="Center" FontSize="30" Margin="0,20,0,0"/>
             <ListView x:Name="Games" 
                       HasUnevenRows="True"
                       HorizontalOptions="Start">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="Start" >
-                                <Image Source="{Binding ImageUrl}"  />
+                            <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="Center" Margin="0,20,0,0" VerticalOptions="Center" HeightRequest="70">
+                                <Image Source="{Binding ImageUrl}" Aspect="AspectFit" HeightRequest="70" WidthRequest="70"/>
                                 <StackLayout HorizontalOptions="StartAndExpand">
                                     <Label Text="{Binding Name}" />
                                     <Label Text="Descrição" />
@@ -22,6 +22,11 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+
+                <ListView.Footer>
+                    <Button Text="Confirmar" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50"  Command="{Binding FollowCommand}"/>
+                </ListView.Footer>
+                    
             </ListView>
         </StackLayout>
     </ContentPage.Content>

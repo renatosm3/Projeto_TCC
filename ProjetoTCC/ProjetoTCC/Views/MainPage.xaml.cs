@@ -9,7 +9,7 @@ namespace ProjetoTCC.Views
         {
             InitializeComponent();
 
-            BindingContext = new MainViewModel();
+            BindingContext = new LoginViewModel();
         }
     }
 }

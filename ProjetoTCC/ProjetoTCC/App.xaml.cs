@@ -14,7 +14,7 @@ namespace ProjetoTCC
             InitializeComponent();
 
             //MainPage = new ProjetoTCC.MainPage();
-            MainPage = new NavigationPage(new ProjetoTCC.Views.MainPage());
+            MainPage = new NavigationPage(new ProjetoTCC.Views.LoginPage());
         }
 
         protected override void OnStart()

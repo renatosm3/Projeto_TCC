@@ -13,7 +13,7 @@ namespace ProjetoTCC.ViewModels
 
         async void ExecuteConfirmCommand()
         {
-            await PushAsync<MainViewModel>();
+            await PushAsync<LoginViewModel>();
         }
     }
 }
