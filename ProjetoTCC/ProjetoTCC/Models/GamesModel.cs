@@ -24,6 +24,12 @@ namespace ProjetoTCC.Models
             set { imageUrl = value; }
         }
 
+        private string descricao;
+        public string Descricao
+        {
+            get { return descricao; }
+            set { descricao = value; }
+        }
         private Boolean follow;
 
         public Boolean Follow

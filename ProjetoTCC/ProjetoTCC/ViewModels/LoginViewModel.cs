@@ -37,5 +37,12 @@ namespace ProjetoTCC.ViewModels
         async void ExecuteLoginCommand() {
             await PushAsync<LocationViewModel>();
         }
+
+
+        public Command Go { get; }
+        async void ExecuteGoCommand()
+        {
+            await PushAsync<PerfilViewModel>();
+        }
     }
 }

@@ -4,6 +4,7 @@
     "Microsoft.Bcl.Build": "1.0.21",
     "Microsoft.Net.Http": "2.2.29",
     "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
+    "Xamarin.FFImageLoading": "2.2.25",
     "Xamarin.Forms": "2.4.0.38779"
   },
   "frameworks": {

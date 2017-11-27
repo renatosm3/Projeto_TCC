@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoTCC.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,11 @@ namespace ProjetoTCC.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class NewEventPage : ContentPage
 	{
-		public NewEventPage ()
+		public NewEventPage()
 		{
 			InitializeComponent ();
-		}
+
+            BindingContext = new NewEventViewModel();
+        }
 	}
 }
