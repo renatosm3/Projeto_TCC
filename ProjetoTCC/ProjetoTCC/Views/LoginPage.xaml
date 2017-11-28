@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              NavigationPage.HasNavigationBar="False"
-             x:Class="ProjetoTCC.Views.LoginPage">
+             x:Class="ProjetoTCC.LoginPage">
     <ContentPage.Content>
 
         <Grid BackgroundColor="White">
@@ -26,7 +26,7 @@
                 
                 <Entry Grid.Row="1" Placeholder="Usuário" PlaceholderColor="#bababa" FontSize="16" />
                 <Entry Grid.Row="2" Placeholder="Senha" PlaceholderColor="#bababa" FontSize="16" />
-                <Button Command="{Binding LoginCommand}" Text="Fazer login" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="3" Margin="0,20,0,0" />
+                <Button Command="{Binding ConectarCommand}" Text="Fazer login" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="3" Margin="0,20,0,0" />
                 <Label Text="Problemas no login?" HorizontalOptions="Center" Grid.Row="4" Margin="0,10,0,0" FontSize="12" />
                 <Grid Grid.Row="5">
                     <Grid.ColumnDefinitions>
@@ -47,7 +47,7 @@
             <StackLayout Grid.Row="2" BackgroundColor="#FFFFFF" Margin="0,0,0,50">
                 <Label HeightRequest="1" BackgroundColor="#E3E3E3" />
                 <Label Text="Não possui conta? Registre-se!" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
-                <Button Command="{Binding RegisterCommand}" Text="Registrar" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50" HorizontalOptions="Center"/>
+                <Button Command="{Binding RegistrarCommand}" Text="Registrar" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50" HorizontalOptions="Center"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

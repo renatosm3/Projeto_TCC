@@ -1,6 +1,4 @@
-﻿using ProjetoTCC.Models;
-using ProjetoTCC.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,13 +7,13 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ProjetoTCC.Views
+namespace ProjetoTCC
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ContactsPage : ContentPage
+	public partial class ParticipantesPage : ContentPage
 	{
 
-		public ContactsPage ()
+		public ParticipantesPage()
 		{
 
             InitializeComponent();
@@ -26,7 +24,7 @@ namespace ProjetoTCC.Views
                 new GamesModel{ Name = "WolfSilver", Descricao = "Renato Oliveira", Follow = false },
                 new GamesModel{ Name = "Vini", Descricao = "Vinícius Furtado", Follow = true }
             };
-            BindingContext = new ContactsViewModel();
+            BindingContext = new ParticipantesPage();
 
 		}
 	}

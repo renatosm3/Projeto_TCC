@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace ProjetoTCC.ViewModels
+namespace ProjetoTCC
 {
-    class ContactsViewModel : BaseViewModel
+    class ParticipantesViewModel : BaseViewModel
     {
         public Command ConfirmCommand { get; }
 
-        public ContactsViewModel()
+        public ParticipantesViewModel()
         {
             ConfirmCommand = new Command(ExecuteConfirmCommand);
         }

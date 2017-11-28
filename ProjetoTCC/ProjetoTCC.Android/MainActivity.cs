@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Forms;
 
 namespace ProjetoTCC.Droid
 {
@@ -20,6 +21,9 @@ namespace ProjetoTCC.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            DependencyService.Register<ITwilio, TwilioController>();
+
+
             LoadApplication(new App());
         }
     }

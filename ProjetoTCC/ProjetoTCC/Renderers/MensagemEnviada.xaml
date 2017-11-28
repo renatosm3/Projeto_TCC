@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjetoTCC.MensagemEnviada">
+    <Grid ColumnSpacing="2" Padding="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="White">
+            <StackLayout>
+                <Label TextColor="Black"  Text="{Binding Texto}"/>
+            </StackLayout>
+        </Frame>
+        <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
+            <!--colocar nome do usuario-->
+            <Label FontSize="Micro" HorizontalOptions="StartAndExpand" Text="fulano" TextColor="Gray"/>
+            <Label FontSize="Micro" HorizontalOptions="EndAndExpand" Text="{Binding HoraEnvio, StringFormat='{0:hh:mm tt}'}" TextColor="Gray"/>
+        </StackLayout>
+    </Grid>
+</ViewCell>

@@ -14,7 +14,7 @@ namespace ProjetoTCC
             InitializeComponent();
 
             //MainPage = new ProjetoTCC.MainPage();
-            MainPage = new NavigationPage(new ProjetoTCC.Views.LoginPage());
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()
@@ -32,4 +32,22 @@ namespace ProjetoTCC
             // Handle when your app resumes
         }
     }
+
+    //public static class ViewModelLocator
+    //{
+    //    static ChatViewModel chatVM;
+    //    public static ChatViewModel ChatViewModel
+    //    {
+    //        get
+    //        {
+    //            if (chatVM == null)
+    //            {
+    //                chatVM = new ChatViewModel();
+    //            }
+    //            return chatVM;
+
+    //        }
+    //    }
+
+    //}
 }

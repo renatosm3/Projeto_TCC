@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace ProjetoTCC.ViewModels
+namespace ProjetoTCC
 {
     public class RegisterViewModel : BaseViewModel
     {

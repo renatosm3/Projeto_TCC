@@ -34,7 +34,7 @@ namespace TwilioIpMessaging.Controllers
 
             return Json(new {
                 identity = identity,
-                token = Token.ToJwt()
+                token = Token.ToJwt(),
             }, JsonRequestBehavior.AllowGet);
         }
     }

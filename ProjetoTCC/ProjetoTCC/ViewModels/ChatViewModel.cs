@@ -1,25 +1,68 @@
-﻿using System;
+﻿using MvvmHelpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace ProjetoTCC.ViewModels
+namespace ProjetoTCC
 {
-    class ChatViewModel : BaseViewModel
+    public class ChatViewModel : BaseViewModel
     {
-        public Command ParticipantesCommand { get; }
+        public Command goParticipantesCommand { get; }
 
-
-        public ChatViewModel()
+        async void ExecutegoParticipantesCommand()
         {
-            ParticipantesCommand = new Command(ExecuteConfirmCommand);
+            await PushAsync<ParticipantesViewModel>();
         }
 
-        async void ExecuteConfirmCommand()
+        public ObservableRangeCollection<Mensagem> Mensagens { get; }
+        ITwilio twilio;
+
+        string mensagemEnviada = string.Empty;
+
+        public string MensagemEnviada
         {
-            await PushAsync<PerfilViewModel>();
+            get { return mensagemEnviada; }
+            set { SetProperty(ref mensagemEnviada, value); }
+        }
+
+        public ICommand EnviarMensagemCommand { get; set; }
+        
+        public ChatViewModel()
+        {
+            goParticipantesCommand = new Command(ExecutegoParticipantesCommand);
+
+            twilio = DependencyService.Get<ITwilio>();
+            
+            Mensagens = new ObservableRangeCollection<Mensagem>();
+
+            EnviarMensagemCommand = new Command(() =>
+            {
+                var mensagem = new Mensagem
+                {
+                    Texto = MensagemEnviada,
+                    Recebendo = false,
+                    HoraEnvio = DateTime.Now
+                };
+
+
+                Mensagens.Add(mensagem);
+
+                twilio?.EnviarMensagem(mensagem.Texto);
+
+                MensagemEnviada = string.Empty;
+            });
+
+            if (twilio == null)
+                return;
+
+            twilio.MensagemAdicionada = (mensagem) =>
+            {
+                Mensagens.Add(mensagem);
+            };
         }
     }
 }

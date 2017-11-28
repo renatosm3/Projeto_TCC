@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using ProjetoTCC.Models;
 using ProjetoTCC.ViewModels;
 
-namespace ProjetoTCC.Views
+namespace ProjetoTCC
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class FollowPage : ContentPage
