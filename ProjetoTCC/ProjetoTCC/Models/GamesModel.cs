@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoTCC.Models
+namespace ProjetoTCC
 {
     class GamesModel
     {
@@ -24,6 +24,12 @@ namespace ProjetoTCC.Models
             set { imageUrl = value; }
         }
 
+        private string descricao;
+        public string Descricao
+        {
+            get { return descricao; }
+            set { descricao = value; }
+        }
         private Boolean follow;
 
         public Boolean Follow

@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ProjetoTCC.Views
+namespace ProjetoTCC
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ContactsPage : ContentPage
+	public partial class MensagemEnviada : ViewCell
 	{
-		public ContactsPage ()
+		public MensagemEnviada ()
 		{
 			InitializeComponent ();
 		}

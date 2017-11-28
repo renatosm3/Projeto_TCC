@@ -114,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="battlenet.png" />
+    <Content Include="csgo.png" />
     <Content Include="discord.png" />
     <Content Include="dota.png" />
     <Content Include="facebook.png" />
@@ -121,6 +122,7 @@
     <Content Include="hearthstone.png" />
     <Content Include="images\default.jpg" />
     <Content Include="lollogo.png" />
+    <Content Include="overwatch.png" />
     <Content Include="PC.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-100.png" />
@@ -155,10 +157,12 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="psn.png" />
+    <Content Include="pubg.png" />
     <Content Include="share.png" />
     <Content Include="steam.png" />
     <Content Include="twitch.png" />
     <Content Include="twitchlogo.png" />
+    <Content Include="wow.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

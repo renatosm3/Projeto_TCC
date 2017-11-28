@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ProjetoTCC.Views
+namespace ProjetoTCC
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
@@ -17,7 +17,7 @@ namespace ProjetoTCC.Views
         {
             InitializeComponent();
 
-            BindingContext = new LoginViewModel();
+            BindingContext = new LoginViewModel(this);
         }
     }
 }

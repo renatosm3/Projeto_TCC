@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProjetoTCC.Views.FollowPage">
+             x:Class="ProjetoTCC.FollowPage">
     <ContentPage.Content>
         <StackLayout BackgroundColor="White" Margin="20,0,20,0">
             <Label Text="O que você curte?" HorizontalOptions="Center" FontSize="30" Margin="0,20,0,0"/>
@@ -11,23 +11,26 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="Center" Margin="0,20,0,0" VerticalOptions="Center" HeightRequest="70">
+                            <StackLayout Orientation="Horizontal" Padding="5" Margin="0,20,0,0" VerticalOptions="Center" HeightRequest="70">
                                 <Image Source="{Binding ImageUrl}" Aspect="AspectFit" HeightRequest="70" WidthRequest="70"/>
-                                <StackLayout HorizontalOptions="StartAndExpand">
+                                <!--<StackLayout HorizontalOptions="StartAndExpand">
                                     <Label Text="{Binding Name}" />
                                     <Label Text="Descrição" />
+                                </StackLayout>-->
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding Name}" />
+                                    <StackLayout HorizontalOptions="StartAndExpand">
+                                    <Switch IsToggled="{Binding Follow}" />
+                                    </StackLayout>
                                 </StackLayout>
-                                <Switch IsToggled="{Binding Follow}" HorizontalOptions="Center"/>
+
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-
-                <ListView.Footer>
-                    <Button Text="Confirmar" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50"  Command="{Binding FollowCommand}"/>
-                </ListView.Footer>
-                    
+                </ListView.ItemTemplate>                   
             </ListView>
+
+            <Button Text="Confirmar" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50"  Command="{Binding ConfirmCommand}" Margin="0,0,0,10"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

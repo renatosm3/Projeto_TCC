@@ -1,12 +1,169 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProjetoTCC.Views.ChatPage">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             
+             x:Class="ProjetoTCC.ChatPage"
+             xmlns:local="clr-namespace:ProjetoTCC;assembly=ProjetoTCC">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:TemplateSelector x:Key="MessageTemplateSelector"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Participantes" Command="{Binding goParticipantesCommand}"/>
+    </ContentPage.ToolbarItems>
+
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Nome do Contato" />
-            <EntryCell />
-            <Entry />
-        </StackLayout>
+        <Grid RowSpacing="0" ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <ListView 
+			x:Name="lvMensagens" 
+            SeparatorVisibility="None"
+			ItemTemplate="{StaticResource MessageTemplateSelector}" 
+			ItemsSource="{Binding Mensagens}" 
+			ItemSelected="lvMensagens_OnItemSelected" 
+			ItemTapped="lvMensagens_OnItemTapped"
+			HasUnevenRows="True" />
+
+            <StackLayout Orientation="Horizontal" Grid.Row="1" Padding="10" BackgroundColor="Snow">
+                <Entry HeightRequest="25" 
+				       Placeholder="Digite uma mensagem" 
+                       HorizontalOptions="FillAndExpand"
+				       Text="{Binding MensagemEnviada}"/>
+                <Button Text=">" Command="{Binding EnviarMensagemCommand}" BackgroundColor="#3897F0" TextColor="White"/>
+            </StackLayout>
+        </Grid>
+        <!--<StackLayout Orientation="Vertical" BackgroundColor="White" Margin="20,0,20,0">
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                <Image Source="grupo.png" Margin="0,0,0,0" />
+                <Label Text="Mix da Uniseb" Margin="5,20,0,0" FontSize="Medium"/>
+                <StackLayout HorizontalOptions="End">
+                    <Button Text="Participantes" BackgroundColor="#3897F0" TextColor="White" FontSize="12"/>
+                </StackLayout>
+            </StackLayout>
+            
+            <StackLayout Orientation="Vertical" Margin="0,20,0,0" HeightRequest="370">
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                    <Label Margin="0,5,0,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Vini: " ForegroundColor="Green"/>
+                                <Span Text="Oi galera, tudo bem?" ForegroundColor="Black"/>
+                                <Span Text=" 19:48" ForegroundColor="Gray" FontSize="12"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+                
+                <Label Margin="0,10,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="OrigPrankster: " ForegroundColor="Blue"/> 
+                            <Span Text="Tranquilo!" ForegroundColor="Black"/>
+                            <Span Text=" 19:48" ForegroundColor="Gray" FontSize="12"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label Margin="0,5,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="WolfSilver: " ForegroundColor="Red"/>
+                            <Span Text="Beleza, e aí?!" ForegroundColor="Black"/>
+                            <Span Text=" 19:48" ForegroundColor="Gray" FontSize="12"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                    <Label Margin="0,5,0,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Vini: " ForegroundColor="Green"/>
+                                <Span Text="Que bom! Bora um mix daqui a pouco?" ForegroundColor="Black"/>
+                                <Span Text=" 19:49" ForegroundColor="Gray" FontSize="12"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+
+                <Label Margin="0,5,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="OrigPrankster: " ForegroundColor="Blue"/>
+                            <Span Text="Bora! Quem vai?" ForegroundColor="Black"/>
+                            <Span Text=" 19:49" ForegroundColor="Gray" FontSize="12"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                    <Label Margin="0,5,0,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Vini: " ForegroundColor="Green"/>
+                                <Span Text="O Pedro e o Roberto" ForegroundColor="Black"/>
+                                <Span Text=" 19:49" ForegroundColor="Gray" FontSize="12"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+
+                <Label Margin="0,5,0,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                            <Span Text="WolfSilver: " ForegroundColor="Red"/>
+                            <Span Text="Eu topo!" ForegroundColor="Black"/>
+                            <Span Text=" 19:49" ForegroundColor="Gray" FontSize="12"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                    <Label Margin="0,5,0,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Vini: " ForegroundColor="Green"/>
+                                <Span Text="Combinado então!" ForegroundColor="Black"/>
+                                <Span Text=" 19:49" ForegroundColor="Gray" FontSize="12"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+
+
+                <Label Margin="0,5,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="OrigPrankster: " ForegroundColor="Blue"/>
+                            <Span Text="Demorou!" ForegroundColor="Black"/>
+                            <Span Text=" 19:49" ForegroundColor="Gray" FontSize="12"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+
+            </StackLayout>
+
+            <Grid VerticalOptions="EndAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="7*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Entry Placeholder="Digite uma mensagem." Grid.Column="0"/>
+                <Button Text=">" BackgroundColor="#3897F0" TextColor="White" Grid.Column="1" />
+            </Grid>
+            <StackLayout Orientation="Horizontal" VerticalOptions="End" Margin="0,0,10,0">
+                <Entry Placeholder="Digite uma mensagem."/>
+                <Button Text=">" BackgroundColor="#3897F0" TextColor="White" />
+            </StackLayout>
+        </StackLayout>-->
     </ContentPage.Content>
 </ContentPage>

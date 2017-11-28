@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjetoTCC.ParticipantesPage"
+             Title="Participantes">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White" Margin="20,0,20,0">
+            <ListView x:Name="contatos" 
+                      HasUnevenRows="True"
+                      HorizontalOptions="Start">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="5" HorizontalOptions="Center" Margin="0,20,0,0" VerticalOptions="Center" HeightRequest="40">
+                                <Label Text="{Binding Descricao}" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                                <StackLayout HorizontalOptions="Center">
+                                    <Label Text="{Binding Name}" VerticalOptions="Center" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

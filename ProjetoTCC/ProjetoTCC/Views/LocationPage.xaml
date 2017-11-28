@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProjetoTCC.Views.LocationPage">
+             x:Class="ProjetoTCC.LocationPage">
     <ContentPage.Content>
         <StackLayout BackgroundColor="White" Margin="20,0,20,0">
             <Label Text="Aonde você está?" HorizontalOptions="Center" FontSize="30" Margin="0,20,0,0"/>
@@ -24,7 +24,8 @@
                     <x:String>Sertãozinho</x:String>
                 </Picker.Items>
             </Picker>
-            <Button Text="Confirmar" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50" Margin="0,20,0,0" Command="{Binding FollowCommand}"/>
+            <Button Text="GPS" BackgroundColor="#3897F0" TextColor="White" Margin="0,20,0,0" HorizontalOptions="Center" HeightRequest="40"/>
+            <Button Text="Confirmar" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50" Margin="0,30,0,0" Command="{Binding FollowCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
